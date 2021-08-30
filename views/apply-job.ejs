@@ -1,0 +1,73 @@
+<%- include("partials/header"); -%>
+
+<section class="banner banner-secondary" id="top" style="background-image: url(/img/banner-image-1-1920x300.jpg);">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <div class="banner-caption">
+          <div class="line-dec"></div>
+          <h2>Apply Job for <%=post.companyName%></h2>
+          <h4><i class="fa fa-briefcase"></i> <%=post.jobRole%></h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main>
+  <section class="popular-places">
+    <form action="/apply-job/<%=post._id%>" method="POST">
+      <div class="container">
+        <div class="contact-content">
+          <div class="row">
+            <div class="col-md-16">
+              <div class="row">
+                <div class="col-md-12">
+                  <fieldset>
+                    <label for="cName">
+                      <h2>Candidate Name</h2>
+                    </label>
+                    <input name="cName" rows="6" type="text" class="form-control" id="name" placeholder="Candidate Name..." required="">
+                  </fieldset>
+                </div>
+                <div class="col-md-12">
+                  <fieldset>
+                    <label for="cName">
+                      <h2>Highest Qualification</h2>
+                    </label>
+                    <input name="highestQualification" rows="6" type="text" class="form-control" id="name" placeholder="Highest Qualification..." required="">
+                  </fieldset>
+                </div>
+                <div class="col-md-12">
+                  <fieldset>
+                    <label for="skills">
+                      <h2>Skills</h2>
+                    </label>
+                    <input name="skills" rows="6" type="text" class="form-control" id="subject" placeholder="Skills..." required="">
+                  </fieldset>
+                </div>
+                <div class="col-md-12">
+                  <fieldset>
+                    <label for="jobDesc">
+                      <h2>Current Address</h2>
+                    </label>
+                    <textarea name="currentAddress" rows="6" class="form-control" id="message" placeholder="Current Address..." required=""></textarea>
+                  </fieldset>
+                </div>
+                <div class="col-md-12">
+                  <fieldset>
+                    <div class="blue-button">
+                      <button type="submit" class="btn" name="button">Apply</button>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </section>
+  <main>
+
+    <%- include("partials/footer"); -%>

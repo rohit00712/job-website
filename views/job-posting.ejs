@@ -1,0 +1,86 @@
+<%- include("partials/header"); -%>
+
+
+
+<section class="banner banner-secondary" id="top" style="background-image: url(img/banner-image-3-1920x300.jpg);">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <div class="banner-caption">
+          <div class="line-dec"></div>
+          <% if (Successful === "True"){ %>
+          <h2>Sucessfully Posted the Job Details!</h2>
+          <%  } else {%>
+          <h2>Job Posting</h2>
+          <%  } %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main>
+  <section class="popular-places">
+    <form action="/job-posting" method="POST">
+      <div class="container">
+        <div class="contact-content">
+          <div class="row">
+            <div class="col-md-16">
+              <div class="row">
+                <div class="col-md-12">
+                  <fieldset>
+                    <label for="rName">
+                      <h2>Recruiter Name</h2>
+                    </label>
+                    <input name="rName" rows="6" type="text" class="form-control" id="name" placeholder="Recruiter Name..." required="">
+                  </fieldset>
+                </div>
+                <div class="col-md-12">
+                  <fieldset>
+                    <label for="cName">
+                      <h2>Company Name</h2>
+                    </label>
+                    <input name="cName" rows="6" type="text" class="form-control" id="name" placeholder="Company Name..." required="">
+                  </fieldset>
+                </div>
+                <div class="col-md-12">
+                  <fieldset>
+                    <label for="jobRole">
+                      <h2>Job Role</h2>
+                    </label>
+                    <input name="jobRole" rows="6" type="text" class="form-control" id="subject" placeholder="Job Role..." required="">
+                  </fieldset>
+                </div>
+                <div class="col-md-12">
+                  <fieldset>
+                    <label for="jobDesc">
+                      <h2>Job Description</h2>
+                    </label>
+                    <textarea name="jobDesc" rows="6" class="form-control" id="message" placeholder="Job Description..." required=""></textarea>
+                  </fieldset>
+                </div>
+                <div class="col-md-12">
+                  <fieldset>
+                    <label for="keySkills">
+                      <h2>Key Skills</h2>
+                    </label>
+                    <textarea name="keySkills" rows="6" class="form-control" id="message" placeholder="Key Skills..." required=""></textarea>
+                  </fieldset>
+                </div>
+                <div class="col-md-12">
+                  <fieldset>
+                    <div class="blue-button">
+                      <button type="submit" class="btn" name="button">Post Job</button>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </section>
+  <main>
+
+    <%- include("partials/footer"); -%>

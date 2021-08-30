@@ -1,0 +1,87 @@
+<%- include("partials/header"); -%>
+
+<section class="banner banner-secondary" id="top" style="background-image: url(/img/banner-image-1-1920x300.jpg);">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <div class="banner-caption">
+          <div class="line-dec"></div>
+          <h2>Applied Job</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main>
+  <div class="container">
+    <section class="featured-places">
+      <div class="dropdown">
+        <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          All Job Posts
+        </button>
+
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <% all_posts.forEach(function(post){ %>
+          <a class="dropdown-item" href="/applied-candidate/<%=post._id%>"><%= post.companyName %></a>
+          <% }); %>
+        </div>
+      </div>
+
+      <% if(is_true === "true"){ %>
+      <%var i = 1%>
+      <% all_candidates.forEach(function(candidate){ %>
+      <h1>....................................................................................................</h1>
+      <label for="">
+        <h2>Application Number <%=i%></h2>
+      </label><br>
+      <label for="">
+        <h2>Candidate Name :</h2>
+      </label>
+      <h4><%=candidate.candidateName%></h4>
+      <label for="">
+        <h2>Highest Qualification :</h2>
+      </label>
+      <h4><%=candidate.highestQualification%></h4>
+      <label for="">
+        <h2>Skills :</h2>
+      </label>
+      <h4><%=candidate.skill%></h4>
+      <label for="">
+        <h2>Current Address :</h2>
+      </label>
+      <h4><%=candidate.currentAddress%></h4>
+      <%i = i+1;%>
+      <h1>....................................................................................................</h1>
+
+      <% }); %>
+      <%}%>
+
+
+
+
+</section>
+</div>
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%- include("partials/footer"); -%>

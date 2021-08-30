@@ -1,0 +1,53 @@
+<%- include("partials/header"); -%>
+
+<section class="banner banner-secondary" id="top" style="background-image: url(/img/banner-image-1-1920x300.jpg);">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <div class="banner-caption">
+          <div class="line-dec"></div>
+          <h2>Jobs</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main>
+  <section class="featured-places">
+    <% all_posts.forEach(function(post){ %>
+    <div class="container">
+
+      <div class="post-preview">
+        <a href="/job-details/<%=post._id%>">
+          <h2 class="post-title">
+            <%= post.companyName %>
+          </h2>
+          <h3 class="post-subtitle">
+            <%= post.jobRole %>
+          </h3>
+        </a>
+        <p><%=post.jobDesc.substring(0, 100) + " ......."%></p>
+        <p class="post-meta">Posted by
+          <%= post.recruiterName %>
+          on <%= post.date %>
+        </p>
+        <div class="col-md-12">
+          <fieldset>
+
+            <div class="blue-button">
+              <a href="/job-details/<%=post._id%>">VIEW MORE</a>
+            </div>
+
+          </fieldset>
+        </div>
+
+      </div>
+
+    </div>
+    <h1>.................................................................................................................................................................</h1>
+    <% }); %>
+  </section>
+</main>
+
+<%- include("partials/footer"); -%>
